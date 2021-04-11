@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { PartieService } from '../services/partie.service';
 
 @Component({
   selector: 'app-popin-nouvelle-partie',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PopinNouvellePartieComponent implements OnInit {
 
-  constructor() { }
+  public nombreJoueurs: number;
+
+  constructor(public dialogRef: MatDialogRef<PopinNouvellePartieComponent>,
+    private partieService: PartieService) { }
 
   ngOnInit(): void {
   }
 
+  public fermerPopin() {
+    this.partieService.joueurs = this.nombreJoueurs;
+    this.dialogRef.close();
+  }
 }

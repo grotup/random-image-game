@@ -4,6 +4,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { AppComponent } from './app.component';
@@ -27,6 +30,9 @@ import { PopinNouvellePartieComponent } from './popin-nouvelle-partie/popin-nouv
     MatTabsModule,
     MatSidenavModule,
     MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
