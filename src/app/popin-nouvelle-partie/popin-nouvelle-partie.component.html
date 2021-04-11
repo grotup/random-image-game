@@ -1,7 +1,7 @@
 <h1>Nouvelle partie</h1>
 <div class="form">
     <mat-form-field appearance="fill">
-        <mat-label>Nombre de joueurs</mat-label>
+        <mat-label>Nombre d'équipes</mat-label>
         <mat-select [(value)]="nombreJoueurs">
             <mat-option [value]="2">
                 2
@@ -18,24 +18,24 @@
         </mat-select>
     </mat-form-field>
     <mat-form-field appearance="fill">
-        <mat-label>Joueur 1</mat-label>
-        <input matInput required>
+        <mat-label>Equipe 1</mat-label>
+        <input matInput formControlName="joueur1">
     </mat-form-field>
     <mat-form-field appearance="fill">
-        <mat-label>Joueur 2</mat-label>
-        <input matInput required>
+        <mat-label>Equipe 2</mat-label>
+        <input matInput formControlName="joueur2">
     </mat-form-field>
     <mat-form-field appearance="fill" *ngIf="nombreJoueurs > 2">
-        <mat-label>Joueur 3</mat-label>
-        <input matInput [required]="nombreJoueurs > 2">
+        <mat-label>Equipe 3</mat-label>
+        <input matInput [required]="nombreJoueurs > 2" formControlName="joueur3">
     </mat-form-field>
     <mat-form-field appearance="fill" *ngIf="nombreJoueurs > 3">
-        <mat-label>Joueur 4</mat-label>
-        <input matInput [required]="nombreJoueurs > 3">
+        <mat-label>Equipe 4</mat-label>
+        <input matInput [required]="nombreJoueurs > 3" formControlName="joueur4">
     </mat-form-field>
     <mat-form-field appearance="fill" *ngIf="nombreJoueurs > 4">
-        <mat-label>Joueur 5</mat-label>
-        <input matInput [required]="nombreJoueurs > 4">
+        <mat-label>Equipe 5</mat-label>
+        <input matInput [required]="nombreJoueurs > 4" formControlName="joueur5">
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="fermerPopin()">Ok</button>
+    <button mat-raised-button color="primary" (click)="fermerPopin()" [disabled]="!isValide()">Ok</button>
 </div>
