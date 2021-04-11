@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { PopinNouvellePartieComponent } from '../popin-nouvelle-partie/popin-nouvelle-partie.component';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(public matDialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
+  public ouvrirPopin() {
+    this.matDialog.open(PopinNouvellePartieComponent);
+  }
 }
