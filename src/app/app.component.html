@@ -1,13 +1,11 @@
 <mat-toolbar>
     <span>Random Image</span>
 </mat-toolbar>
+
 <div class="container">
     <div class="menu">
-        <mat-tab-group>
-            <mat-tab label="Le jeu"></mat-tab>
-            <mat-tab label="Admin"></mat-tab>
-        </mat-tab-group>
-      </div>
+        <app-menu></app-menu>
+    </div>
     <div class="plateau">
         <app-plateau></app-plateau>
     </div>
@@ -15,4 +13,4 @@
         <img src="http://placekitten.com/300/450" alt="">
     </div>
     <div class="dices">Les dés</div>
-</div>  
+</div>
