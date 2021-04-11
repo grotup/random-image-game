@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PartieService } from '../services/partie.service';
 
 @Component({
   selector: 'app-plateau',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlateauComponent implements OnInit {
 
-  constructor() { }
+  public nombreJoueur: number;
+
+  constructor(private partieService: PartieService) { }
 
   ngOnInit(): void {
+    this.partieService.partie$.subscribe(partie => this.nombreJoueur = partie.nombreJoueurs);
   }
 
 }

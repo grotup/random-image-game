@@ -15,6 +15,7 @@ export class PopinNouvellePartieComponent implements OnInit {
     private partieService: PartieService) { }
 
   ngOnInit(): void {
+    this.nombreJoueurs = this.partieService.partie?.nombreJoueurs ? this.partieService.partie.nombreJoueurs : 2;
   }
 
   public fermerPopin() {

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
 import { PartieModel } from '../models/partie.model';
 
@@ -7,16 +8,19 @@ import { PartieModel } from '../models/partie.model';
 })
 export class PartieService {
 
-  private readonly _partie = new BehaviorSubject<PartieModel>(null);
+  private _partie: PartieModel;
 
-  readonly partie$ = this._partie.asObservable();
+  private readonly _partieSubject = new Subject<PartieModel>();
+
+  readonly partie$ = this._partieSubject.asObservable();
 
   get partie(): PartieModel {
-    return this._partie.getValue();
+    return this._partie
   }
 
   set partie(val: PartieModel) {
-    this._partie.next(val);
+    this._partie = val;
+    this._partieSubject.next(val);
   }
 
   set joueurs(nombreJoueurs: number) {
