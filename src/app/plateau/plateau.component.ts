@@ -16,4 +16,8 @@ export class PlateauComponent implements OnInit {
     this.partieService.partie$.subscribe(partie => this.nombreJoueur = partie.nombreJoueurs);
   }
 
+  onClick(): void {
+    this.store.dispatch(joueurSuivant())
+  }
+
 }
