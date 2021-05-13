@@ -1,6 +1,6 @@
 import { ɵNullViewportScroller } from "@angular/common";
 import { createReducer, on } from "@ngrx/store";
-import { changerImageEnCours, bonneReponse, joueurSuivant, changerImage } from "./jeu.action";
+import { changerImageEnCours, bonneReponse, joueurSuivant, changerImage, augmenterScore, diminuerScore } from "./jeu.action";
 
 export interface JeuState {
     images: string[];
@@ -79,7 +79,36 @@ const _jeuReducer = createReducer(
             ...state,
             indexImageEnCours: newIndex
         }
-    })
+    }),
+    on(augmenterScore, (state, {joueur}) => {
+        const indexJoueur = state.joueurs.findIndex(element => joueur.nom === element.nom)
+        return {
+            ...state,
+            joueurs: [
+                ...state.joueurs.slice(0, indexJoueur),
+                {
+                    ...state.joueurs[indexJoueur],
+                    score: state.joueurs[indexJoueur].score + 1
+                },
+                ...state.joueurs.slice(indexJoueur+1)
+            ]
+        };
+    }),
+    on(diminuerScore, (state, {joueur}) => {
+        const indexJoueur = state.joueurs.findIndex(element => joueur.nom === element.nom)
+        return {
+            ...state,
+            joueurs: [
+                ...state.joueurs.slice(0, indexJoueur),
+                {
+                    ...state.joueurs[indexJoueur],
+                    score: state.joueurs[indexJoueur].score - 1
+                },
+                ...state.joueurs.slice(indexJoueur+1)
+            ]
+        };
+    }),
+    
 );
 
 export function jeuReducer(state, action) {
