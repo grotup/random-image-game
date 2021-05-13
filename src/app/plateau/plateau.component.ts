@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { select, Store } from '@ngrx/store';
 import { PartieService } from '../services/partie.service';
+import { bonneReponse as bonneReponseAction, changerImage, joueurSuivant } from '../state/jeu.action';
+import { selectIndexJoueurEnCours, selectJoueurEnCours, selectJoueurs } from '../state/jeu.selectors';
 
 @Component({
   selector: 'app-plateau',
@@ -10,14 +13,24 @@ export class PlateauComponent implements OnInit {
 
   public nombreJoueur: number;
 
-  constructor(private partieService: PartieService) { }
+  public joueurEnCours$ = this.store.pipe(select(selectJoueurEnCours));
+  public indexJoueurEnCours$ = this.store.pipe(select(selectIndexJoueurEnCours));
+  public joueurs$ = this.store.pipe(select(selectJoueurs));
+
+  displayedColumns: string[] = ['nom', 'score'];
+
+  constructor(private store: Store) { }
 
   ngOnInit(): void {
-    this.partieService.partie$.subscribe(partie => this.nombreJoueur = partie.nombreJoueurs);
   }
 
-  onClick(): void {
+  finirTour(bonneReponse: boolean): void {
+    if(bonneReponse) {
+      this.store.dispatch(bonneReponseAction());
+    }
     this.store.dispatch(joueurSuivant())
+    this.store.dispatch(changerImage())
+    
   }
 
 }

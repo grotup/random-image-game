@@ -3,14 +3,15 @@
 </mat-toolbar>
 
 <div class="container">
-    <div class="menu">
+    <!-- <div class="menu">
         <app-menu></app-menu>
-    </div>
+    </div> -->
     <div class="plateau">
         <app-plateau></app-plateau>
     </div>
     <div class="affiche">
-        <img src="http://placekitten.com/300/450" alt="">
+        <!-- <pre>{{imageEnCours$ | async}}</pre> -->
+        <img src="{{imageEnCours$ | async}}" alt="">
     </div>
     <div class="dices">Les dés</div>
 </div>
