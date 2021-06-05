@@ -19,6 +19,7 @@ import { MenuComponent } from './menu/menu.component';
 import { PopinNouvellePartieComponent } from './popin-nouvelle-partie/popin-nouvelle-partie.component';
 import { jeuReducer } from './state/jeu.reducer';
 import { StoreModule } from '@ngrx/store';
+import { LightboxModule } from 'ngx-lightbox';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { StoreModule } from '@ngrx/store';
     MatSelectModule,
     MatTableModule,
     MatIconModule,
-    StoreModule.forRoot({jeu: jeuReducer})
+    StoreModule.forRoot({jeu: jeuReducer}),
+    LightboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

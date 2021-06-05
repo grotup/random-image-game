@@ -4,9 +4,9 @@ import { Joueur } from "../models/partie.model";
 export const changerImageEnCours = createAction('changerImageEnCours');
 export const joueurSuivant = createAction('joueurSuivant');
 
-export const changerImage = createAction('changerImage');
-
 export const bonneReponse = createAction('[plateau] bonneReponse');
+
+export const changerImage = createAction('[image] changerImage');
 
 export const augmenterScore = createAction(
     '[plateau] augmenterScore',

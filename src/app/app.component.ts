@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { select, Store } from '@ngrx/store';
+import { Lightbox } from 'ngx-lightbox';
 import { imageEnCours } from './state/jeu.selectors';
 
 @Component({
@@ -15,5 +16,9 @@ export class AppComponent {
   constructor(private store: Store) {
         
 
+  }
+
+  public open() {
+    // this._lightbox.open()
   }
 }

@@ -16,7 +16,27 @@ export interface Joueur {
 }
 
 export const initialState: JeuState = {
-    images: ['assets/img/image_1.jpg', 'assets/img/image_2.png', 'assets/img/image_3.jpg', 'assets/img/image_4.jpg'],
+    images: [
+        'assets/img/image_1.png', 
+        'assets/img/image_2.png', 
+        'assets/img/image_3.png', 
+        'assets/img/image_4.png', 
+        'assets/img/image_5.png', 
+        'assets/img/image_6.png', 
+        'assets/img/image_7.png', 
+        'assets/img/image_8.png', 
+        'assets/img/image_9.png', 
+        'assets/img/image_10.png',
+        'assets/img/image_11.png', 
+        'assets/img/image_12.png',  
+        'assets/img/image_13.png', 
+        'assets/img/image_14.png', 
+        'assets/img/image_15.png', 
+        'assets/img/image_16.png', 
+        'assets/img/image_17.png', 
+        'assets/img/image_18.png', 
+        'assets/img/image_19.png', 
+        'assets/img/image_20.png',],
     indexImageEnCours: 2,
     indexJoueurEnCours: 0,
     joueurs: [{
@@ -42,7 +62,7 @@ const _jeuReducer = createReducer(
     on(changerImageEnCours, (state) => {
         return {
             ...state,
-            imageEnCours: state.images[Math.floor(Math.random() * 4)]
+            imageEnCours: state.images[Math.floor(Math.random() * state.images.length)]
         }
     }),
     on(joueurSuivant, (state) => {

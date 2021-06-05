@@ -41,4 +41,8 @@ export class PlateauComponent implements OnInit {
   retirerPoint(joueur: Joueur) {
     this.store.dispatch(diminuerScore({joueur}))
   }
+
+  changerImage() {
+    this.store.dispatch(changerImage());
+  }
 }

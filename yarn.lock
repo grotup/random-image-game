@@ -1148,6 +1148,13 @@
     merge-source-map "^1.1.0"
     schema-utils "^2.7.0"
 
+"@ngrx/store@^11.1.1":
+  version "11.1.1"
+  resolved "https://nexus.int.rcacloud.it/repository/npm-all/@ngrx/store/-/store-11.1.1.tgz#e971d767ae5caa8984daad23cda38c6fd94dc888"
+  integrity sha512-tkeKoyYo631hLJ1I8+bm9EWoi7E0A3i4IMjvf956Vpu5IdMnP6d0HW3lKU/ruhFD5YOXAHcUgEIWyfxxILABag==
+  dependencies:
+    tslib "^2.0.0"
+
 "@ngtools/webpack@11.2.7":
   version "11.2.7"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-11.2.7.tgz#963d00ccb099bb82252cdaf37a1abce548b14706"
@@ -5863,6 +5870,11 @@ next-tick@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
+
+ngx-lightbox@^2.3.0:
+  version "2.3.0"
+  resolved "https://nexus.int.rcacloud.it/repository/npm-all/ngx-lightbox/-/ngx-lightbox-2.3.0.tgz#ae9d183927c682754064576868c6fa42b2d3b91e"
+  integrity sha512-t59Pvk8MqpFM+p6+YxPVw/t9PMFmfLQ/gqIyc2W7T7MnJxxp5jsvDOmKUmOKUs5uYReIrzViInmMqu4s50VV8Q==
 
 nice-try@^1.0.4:
   version "1.0.5"
